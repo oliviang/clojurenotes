@@ -1,0 +1,8 @@
+Given a sequence of events, each having a start and end time, 
+write a program that will return the sequence of all pairs of overlapping events.
+
+use vector representation instead of list representation
+pros:
+  -easy access to data stored in elements of the vector
+  
+  A Vector is a collection of values indexed by contiguous integers. Vectors support access to items by index 
