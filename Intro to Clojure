@@ -8,10 +8,63 @@ scope: when clojure attempts to resolve a symbol, the resolution will be carried
         - nested lets are possible
         - symbol resolution is carried out inside the let where the symbol is resolved
         - the inner let does not override the scope of the outer let. both remain valid.
+        - IMPORTANT: Clojure complains with "Unable to resolve symbol exception" when it cannot find the binding inside the given scope.
         
 def : allows you to define a PUBLIC variable that can be accessed anywhere
-  (not often used because it allows for issues in security)
+  - avoid the use of def because it allows for issues in security)
 
 
 --------------------------------------FUNCTIONS-------------------------------------------
 defn: allows you to define a function
+      - the name of your function is defined immediately after "defn" with hyphens in between words
+  Example from _______:
+  user=> (defn say-hello
+         [name]
+         (println (str "Hello, " name)))
+
+user=> (say-hello "Kim")
+Hello, Kim
+nil
+
+
+
+
+--------------------------------------NAMESPACES-------------------------------------------
+namespace: way to organize different Clojure objects into to logical groups
+
+
+--------------------------------------BOOLEAN-------------------------------------------
+
+
+--------------------------------------STRINGS-------------------------------------------
+" " : string
+  instantiate a string by double quoting text:
+    "Hello World!"
+str: concatenate strings
+
+
+
+
+--------------------------------------INTEGERS-------------------------------------------
+PREFIX OPERATION:
+addition (+ ab)
+subtraction (- ab)
+multiplication (* ab)
+division (/ ab)
+power -> no power function. must create own
+  example:
+          user=> (defn power
+            [x n]
+            (reduce * (repeat n x))
+          )
+
+          user=> (power 2 3)
+          8
+
+- mod: modulus function (% in C#)
+- max: find max given a collection of values
+- min: find min given a collection of values
+- bigint: equivalent to C# "long" data type
+
+
+
